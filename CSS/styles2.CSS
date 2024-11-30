@@ -1,0 +1,87 @@
+body {
+    background-color: aliceblue;
+}
+
+p.page-one {
+    font-size: 4rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(19, 19, 19);
+    border: #ffffff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 70%; 
+    margin: 0 auto; 
+    text-align: center; 
+}
+
+.container {
+    margin: 0 auto; 
+    border: #ffffff;
+    text-align: center; 
+    padding: 0; 
+    width: 40%;
+}
+
+img.align-center {
+    display: block;
+    width: 20%; 
+    margin-left: auto;
+    margin-right: auto;
+    top: 10px;
+    height: auto; 
+    border: none; 
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+    cursor: pointer; /* Indicate that the logo is clickable */
+}
+
+img.align-center:hover {
+    transform: scale(1.1); /* Enlarge the logo on hover */
+}
+
+img.small {
+    height: auto;
+    border: none;
+}
+
+img.medium {
+    width: 70%;
+    height: auto;
+    border: none;
+}
+
+img.large {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+
+.game-modes {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center;
+    gap: 20px; 
+    margin-top: 20px; 
+}
+
+.mode-row {
+    width: 25%; 
+    padding: 20px; 
+    border: 2px solid #333; 
+    border-radius: 20px; 
+    background-color: #ffffffaf; 
+    color: #2d2626; 
+    font-size: 2rem; 
+    justify-content: center;
+    text-align: center; 
+    transition: background-color 0.3s, transform 0.2s; 
+    height: 400px;
+}
+
+.mode-row:hover {
+    background-color: #bada55; 
+    transform: scale(1.05); 
+    cursor: pointer; 
+}
