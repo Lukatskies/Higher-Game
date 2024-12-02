@@ -35,12 +35,14 @@ html, body {
 
 /* Styling for left artist container */
 #left-artist-container, #right-artist-container {
-    width: 45%; /* Make sure both sections take up equal space */
+    width: 450px; /* Make sure both sections take up equal space */
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    height: 100%; /* Full height of the game board */
+    height: 100%; 
+    overflow: hidden;
 }
 
 /* Styling for artist content (image, name, artist) */
@@ -50,10 +52,14 @@ html, body {
 
 /* Image styling for left and right artists */
 #left-artist-image, #right-artist-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover; /* Ensure the image fits within the container */
+    width: 100%; /* Fixed width */
+    height: 100%; /* Fixed height */
+    display: flex;
+    object-fit: contain; 
+    border-radius: 20px; /* Optional: Adds rounded corners */
+    border: 2px solid #ccc; /* Optional: Adds a border for better visibility */
 }
+
 
 /* Button styling for guess buttons */
 .guess-btn-up {
@@ -80,7 +86,41 @@ html, body {
     
 }
 
-/* Optional: Styling for text */
-#left-artist-name, #right-artist-name, #left-artist-name, #right-artist-name {
-    margin: 10px 0;
+
+
+/* Result container for .gif */
+#result-container {
+    width: 10%; /* Adjust width as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Result .gif styling */
+#result-gif {
+    max-width: 100%;
+    height: auto;
+    display: hidden;
+}
+
+/* Header styling */
+header {
+
+    padding: 0px 0; /* Add spacing around the logo */
+    margin: 0;
+    text-align: center; /* Center the logo horizontally */
+    position: fixed; /* Keep it at the top when scrolling */
+    top: 0;
+}
+
+/* Logo styling */
+header .logo {
+    width: 250px; /* Adjust the size of your logo */
+    height: auto;
+    cursor: pointer; /* Make the logo clickable */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+}
+
+header .logo:hover {
+    transform: scale(1.1); /* Enlarge the logo on hover */
 }

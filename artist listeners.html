@@ -7,20 +7,31 @@
     <link rel="stylesheet" href="Monthly Listeners/Artist/artistStyles.css">
 </head>
 <body>
+
+<header>
+        <img src="CSS/Images/Logo.png" alt="Logo" class="logo" onclick="location.href='game modes.html'" />
+    </header>
+
     <div id="game">
         <div id="game-board">
             <!-- Left artist Container -->
             <div id="left-artist-container">
                 <div id="left-artist">
-                    <img id="left-artist-image" src="artist1.jpg" alt="Artist 1 Image">
+                    <img id="left-artist-image" src="Monthly Listeners/Artist Images/" alt="Artist 1 Image">
                     <p class="artist-name" id="left-artist-name">Artist 1</p>
                 </div>
             </div>
 
+             <!-- Placeholder for the check mark .gif -->
+        <!-- Add this element in the HTML -->
+<div id="result-container">
+    <img id="result-gif" src="Monthly Listeners/Gif File/Check Mark.gif" hidden>
+</div>
+
             <!-- Right artist Container -->
             <div id="right-artist-container">
                 <div id="right-artist">
-                    <img id="right-artist-image" src="artist2.jpg" alt="Artist 2 Image">
+                    <img id="right-artist-image" src="Monthly Listeners/Artist Images/" alt="Artist 2 Image">
                     <p class="artist-name" id="right-artist-name">Artist 2</p>
                     <button id="higher" class="guess-btn">Higher</button>
                     <button id="lower" class="guess-btn">Lower</button> 

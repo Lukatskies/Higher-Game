@@ -13,32 +13,35 @@ let leftartistContainer, rightartistContainer;
 
 // Artists Object List
 const artists = [
-    { image: 'artist1.jpg', artist: 'Taylor Swift', value: 94558183304 },
-    { image: 'artist2.jpg', artist: 'Drake', value: 81354787430 },
-    { image: 'artist3.jpg', artist: 'Bad Bunny', value: 77438204571 },
-    { image: 'artist4.jpg', artist: 'The Weeknd', value: 63850944174 },
-    { image: 'artist5.jpg', artist: 'Ed Sheeran', value: 50654299016 },
-    { image: 'artist6.jpg', artist: 'Ariana Grande', value: 49232938801 },
-    { image: 'artist7.jpg', artist: 'Eminem', value: 47026342313 },
-    { image: 'artist8.jpg', artist: 'Justin Bieber', value: 45542432177 },
-    { image: 'artist9.jpg', artist: 'Post Malone', value: 42818439804 },
-    { image: 'artist10.jpg', artist: 'Kanye West', value: 42801386602 },
-    { image: 'artist11.jpg', artist: 'Billie Eilish', value: 42057176248 },
-    { image: 'artist12.jpg', artist: 'BTS', value: 40647351280 },
-    { image: 'artist13.jpg', artist: 'Coldplay', value: 35451535823 },
-    { image: 'artist14.jpg', artist: 'Travis Scott', value: 35405434107 },
-    { image: 'artist15.jpg', artist: 'Rihanna', value: 35347737480 },
-    { image: 'artist16.jpg', artist: 'J Balvin', value: 34299541981 },
-    { image: 'artist17.jpg', artist: 'Dua Lipa', value: 33763345276 },
-    { image: 'artist18.jpg', artist: 'Imagine Dragons', value: 32861120742 },
-    { image: 'artist19.jpg', artist: 'Juice WRLD', value: 32545805647 },
-    { image: 'artist20.jpg', artist: 'Bruno Mars', value: 31277978576 },
-    { image: 'artist21.jpg', artist: 'XXXTENTACION', value: 30738659235 },
-    { image: 'artist22.jpg', artist: 'David Guetta', value: 30084737839 },
-    { image: 'artist23.jpg', artist: 'Ozuna', value: 29503679301 },
-    { image: 'artist24.jpg', artist: 'Kendrick Lamar', value: 29295617051 },
-    { image: 'artist25.jpg', artist: 'Maroon 5', value: 28348550823 },
+    { image: 'Taylor Swift.jpg', artist: 'Taylor Swift', value: 94558183304 },
+    { image: 'Drake.jpg', artist: 'Drake', value: 81354787430 },
+    { image: 'Bad Bunny.jpg', artist: 'Bad Bunny', value: 77438204571 },
+    { image: 'The Weeknd.jpg', artist: 'The Weeknd', value: 63850944174 },
+    { image: 'Ed Sheeran.jpg', artist: 'Ed Sheeran', value: 50654299016 },
+    { image: 'Ariana Grande.jpg', artist: 'Ariana Grande', value: 49232938801 },
+    { image: 'Eminem.jpg', artist: 'Eminem', value: 47026342313 },
+    { image: 'Justin Bieber.jpg', artist: 'Justin Bieber', value: 45542432177 },
+    { image: 'Post Malone.jpg', artist: 'Post Malone', value: 42818439804 },
+    { image: 'Kanye West.jpg', artist: 'Kanye West', value: 42801386602 },
+    { image: 'Billie Eilish.jpg', artist: 'Billie Eilish', value: 42057176248 },
+    { image: 'BTS.jpg', artist: 'BTS', value: 40647351280 },
+    { image: 'Coldplay.jpg', artist: 'Coldplay', value: 35451535823 },
+    { image: 'Travis Scott.jpg', artist: 'Travis Scott', value: 35405434107 },
+    { image: 'Rhianna.jpg', artist: 'Rihanna', value: 35347737480 },
+    { image: 'J Balvin.jpg', artist: 'J Balvin', value: 34299541981 },
+    { image: 'Dua Lipa.jpg', artist: 'Dua Lipa', value: 33763345276 },
+    { image: 'Imagine Dragons.jpg', artist: 'Imagine Dragons', value: 32861120742 },
+    { image: 'Juice WRLD.jpg', artist: 'Juice WRLD', value: 32545805647 },
+    { image: 'Bruno Mars.jpg', artist: 'Bruno Mars', value: 31277978576 },
+    { image: 'X.jpg', artist: 'XXXTENTACION', value: 30738659235 },
+    { image: 'David Guetta.jpg', artist: 'David Guetta', value: 30084737839 },
+    { image: 'Ozuna.jpg', artist: 'Ozuna', value: 29503679301 },
+    { image: 'Kendrick.jpg', artist: 'Kendrick Lamar', value: 29295617051 },
+    { image: 'Maroon 5.jpg', artist: 'Maroon 5', value: 28348550823 },
 ];
+
+// Define the base directory for images
+const imageDirectory = "Monthly Listeners/Artist Images/";
 
 // Helper function to get a random artist
 function getRandomArtist(excludeartist) {
@@ -49,18 +52,25 @@ function getRandomArtist(excludeartist) {
     return randomartist;
 }
 
+// Select the result-gif element
+const resultGif = document.getElementById("result-gif");
+
 // Function to update the game board
 function updateGameBoard() {
+
+     // Hide the result gif when updating the board
+     resultGif.hidden = true;
+     
     const leftartist = getRandomArtist();
     const rightartist = getRandomArtist(leftartist);
 
     // Update left artist details
-    leftartistImage.src = leftartist.image;
+    leftartistImage.src = imageDirectory + leftartist.image;
     leftartistName.textContent = leftartist.artist;
     leftartistContainer = leftartist;
 
     // Update right artist details
-    rightartistImage.src = rightartist.image;
+    rightartistImage.src = imageDirectory + rightartist.image;
     rightartistName.textContent = rightartist.artist;
     rightartistContainer = rightartist;
 }
@@ -68,6 +78,7 @@ function updateGameBoard() {
 // Event listeners for buttons
 higherButton.addEventListener("click", () => handleGuess("higher"));
 lowerButton.addEventListener("click", () => handleGuess("lower"));
+
 
 // Handle guess
 function handleGuess(guess) {
@@ -77,6 +88,15 @@ function handleGuess(guess) {
 
     if (isCorrect) {
         alert("Correct! Your score is: " + ++score);
+    
+        // Show the result gif
+        resultGif.hidden = false;
+
+        // Hide the gif after 2 seconds
+        setTimeout(() => {
+            resultGif.hidden = true;
+        }, 2000);
+
     } else {
         alert(
             `Wrong! Left artist had ${leftartistContainer.value} views, right artist had ${rightartistContainer.value} views.`
@@ -90,3 +110,4 @@ function handleGuess(guess) {
 
 // Initialize the game
 updateGameBoard();
+
