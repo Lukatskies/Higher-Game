@@ -56,11 +56,28 @@ html, body {
 }
 
 /* Button styling for guess buttons */
-.guess-btn {
+.guess-btn-up {
     margin: 10px;
-    padding: 10px 20px;
+    padding: 10px 60px 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    background-image: url('Images/greenArrow.png');
+    background-position: right;
+    background-size: 30%;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.guess-btn-down {
+    margin: 10px;
+    padding: 10px 60px 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-image: url('Images/redArrow.png');
+    background-size: 30%;
+    background-position: right;
+    background-repeat: no-repeat;
+    
 }
 
 /* Optional: Styling for text */
