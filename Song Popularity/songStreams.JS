@@ -1,9 +1,12 @@
 let score = 0;
 let highScore = 0;
+let currentLeftSong;
+let currentRightSong;
+
 let songs = [
-    { image: 'Song Popularity/Images/The_Weeknd_-_Blinding_Lights.png', name: 'Shape of You', artist: 'Ed Sheeran', value: 4800000000 },
-    { image: 'song2.jpg', name: 'Blinding Lights', artist: 'The Weeknd', value: 3900000000 },
-    { image: 'song3.jpg', name: 'Uptown Funk', artist: 'Bruno Mars', value: 5000000000 },
+    { image: 'Images/The_Weeknd_-_Blinding_Lights.png', name: 'Shape of You', artist: 'Ed Sheeran', value: 4800000000 },
+    { image: '', name: 'Blinding Lights', artist: 'The Weeknd', value: 3900000000 },
+    { image: '', name: 'Uptown Funk', artist: 'Bruno Mars', value: 5000000000 },
     // Add more songs here with their corresponding values
 ];
 
@@ -35,20 +38,35 @@ function updateSong(side, song) {
 }
 
 function nextSong() {
-    const leftSong = songs[Math.floor(Math.random() * songs.length)];
-    let rightSong;
+    if (songs.length < 2) {
+        console.error("Not enough songs in the array!");
+        return;
+    }
 
+    currentLeftSong = songs[Math.floor(Math.random() * songs.length)];
     do {
-        rightSong = songs[Math.floor(Math.random() * songs.length)];
-    } while (rightSong === leftSong); // Ensure left and right songs are different
+        currentRightSong = songs[Math.floor(Math.random() * songs.length)];
+    } while (currentRightSong === currentLeftSong);
 
-    updateSong('left', leftSong);
-    updateSong('right', rightSong);
+    if (!currentLeftSong || !currentRightSong) {
+        console.error("Failed to initialize songs.");
+        return;
+    }
+
+    updateSong('left', currentLeftSong);
+    updateSong('right', currentRightSong);
 }
 
+
 function checkGuess(isHigher) {
-    const leftSongValue = leftSong.value;
-    const rightSongValue = rightSong.value;
+    // EDIT THIS
+    if (currentLeftSong || !currentRightSong) {
+        console.error("Songs are not properly initialized.");
+        return;
+    }
+
+    const leftSongValue = currentLeftSong.value;
+    const rightSongValue = currentRightSong.value;
 
     if ((isHigher && rightSongValue > leftSongValue) || (!isHigher && rightSongValue < leftSongValue)) {
         score++;
@@ -58,6 +76,7 @@ function checkGuess(isHigher) {
         feedback.textContent = 'Incorrect!';
         feedback.style.color = 'red';
         endGame();
+        return; // Prevent `nextSong` from being called after game over
     }
 
     scoreDisplay.textContent = score;
@@ -66,8 +85,12 @@ function checkGuess(isHigher) {
         highScoreDisplay.textContent = highScore;
     }
 
-    setTimeout(nextSong, 1000);
+    setTimeout(() => {
+        feedback.textContent = '';
+        nextSong();
+    }, 1000);
 }
+
 
 function endGame() {
     finalScoreDisplay.textContent = score;
@@ -90,3 +113,5 @@ playAgainButton.addEventListener('click', playAgain);
 document.addEventListener("DOMContentLoaded", function() {
     nextSong(); // Ensure songs load when the page is loaded
 });
+
+nextSong();
