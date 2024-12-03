@@ -86,3 +86,25 @@ html, body {
 #left-song-name, #right-song-name, #left-artist-name, #right-artist-name {
     margin: 10px 0;
 }
+
+/* Header styling */
+header {
+
+    padding: 0px 0; /* Add spacing around the logo */
+    margin: 0;
+    text-align: center; /* Center the logo horizontally */
+    position: fixed; /* Keep it at the top when scrolling */
+    top: 0;
+}
+
+/* Logo styling */
+header .logo {
+    width: 250px; /* Adjust the size of your logo */
+    height: auto;
+    cursor: pointer; /* Make the logo clickable */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+}
+
+header .logo:hover {
+    transform: scale(1.1); /* Enlarge the logo on hover */
+}

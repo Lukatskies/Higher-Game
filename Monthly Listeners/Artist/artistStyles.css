@@ -1,41 +1,41 @@
-/* Reset styles for margin, padding, and box-sizing */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body and HTML layout */
+
 html, body {
     height: 100%;
-    margin: 0; /* Ensure there's no default margin */
+    margin: 0; 
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aliceblue; /* Light background color */
+    background-color: aliceblue; 
 }
 
 /* Game container */
 #game {
     display: flex;
-    justify-content: center; /* Center the game horizontally */
-    align-items: center; /* Center the game vertically */
-    height: 100vh; /* Full viewport height */
-    width: 100vw; /* Full viewport width */
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    width: 100vw; 
 }
 
-/* Game board layout */
+
 #game-board {
     display: flex;
     justify-content: center; 
     align-items: center; 
     height: 100%; 
-    width: 100%; /* Full width of the game container */
+    width: 100%; 
 }
 
-/* Styling for left artist container */
+
 #left-artist-container, #right-artist-container {
-    width: 450px; /* Make sure both sections take up equal space */
+    width: 450px; 
     height: 450px;
     display: flex;
     justify-content: center;
@@ -45,25 +45,26 @@ html, body {
     overflow: hidden;
 }
 
-/* Styling for artist content (image, name, artist) */
+
 #left-artist, #right-artist {
     text-align: center;
+    margin: 20px;
 }
 
-/* Image styling for left and right artists */
+
 #left-artist-image, #right-artist-image {
-    width: 100%; /* Fixed width */
-    height: 100%; /* Fixed height */
+    width: 450px; 
+    height: 450px; 
     display: flex;
     object-fit: contain; 
-    border-radius: 20px; /* Optional: Adds rounded corners */
-    border: 2px solid #ccc; /* Optional: Adds a border for better visibility */
+    border-radius: 20px; 
+    border: 2px solid #ccc; 
 }
 
 
 /* Button styling for guess buttons */
 .guess-btn-up {
-    margin: 10px;
+    margin: 30px;
     padding: 10px 60px 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -88,39 +89,71 @@ html, body {
 
 
 
-/* Result container for .gif */
 #result-container {
-    width: 10%; /* Adjust width as needed */
+    width: 10%; 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Result .gif styling */
+
 #result-gif {
     max-width: 100%;
     height: auto;
     display: hidden;
 }
 
-/* Header styling */
+
 header {
 
-    padding: 0px 0; /* Add spacing around the logo */
+    padding: 0px 0; 
     margin: 0;
-    text-align: center; /* Center the logo horizontally */
-    position: fixed; /* Keep it at the top when scrolling */
+    text-align: center; 
+    position: fixed; 
     top: 0;
 }
 
-/* Logo styling */
+
 header .logo {
-    width: 250px; /* Adjust the size of your logo */
+    width: 250px; 
     height: auto;
-    cursor: pointer; /* Make the logo clickable */
-    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+    cursor: pointer; 
+    transition: transform 0.3s ease-in-out; 
 }
 
 header .logo:hover {
-    transform: scale(1.1); /* Enlarge the logo on hover */
+    transform: scale(1.1); 
+}
+
+
+#score-container {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+#high-score {
+    text-align: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}
+
+#current-score {
+    text-align: right;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}
+
+.artist-streams {
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px; /* Space between the streams count and the image */
 }

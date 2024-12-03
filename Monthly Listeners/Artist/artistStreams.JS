@@ -9,6 +9,18 @@ const higherButton = document.getElementById("higher");
 const lowerButton = document.getElementById("lower");
 
 let score = 0;
+let highScore = 0;
+
+// DOM elements for score display
+const highScoreElement = document.getElementById("high-score");
+const currentScoreElement = document.getElementById("current-score");
+
+// Function to update score display
+function updateScoreDisplay() {
+    currentScoreElement.textContent = `Score: ${score}`;
+    highScoreElement.textContent = `High Score: ${highScore}`;
+}
+
 let leftartistContainer, rightartistContainer;
 
 // Artists Object List
@@ -80,6 +92,31 @@ higherButton.addEventListener("click", () => handleGuess("higher"));
 lowerButton.addEventListener("click", () => handleGuess("lower"));
 
 
+//Animation stuff//
+const leftArtistStreams = document.getElementById("left-artist-streams");
+const rightArtistStreams = document.getElementById("right-artist-streams");
+
+//function to animate the streams count//
+function animateCount(element, targetValue) {
+    let currentValue = 0;
+    const duration = 2000; // Animation duration in ms
+    const increment = Math.ceil(targetValue / (duration / 16)); // Increment per frame (assuming ~60fps)
+
+    function update() {
+        currentValue += increment;
+        if (currentValue >= targetValue) {
+            currentValue = targetValue;
+        }
+        element.textContent = currentValue.toLocaleString(); // Format with commas
+        if (currentValue < targetValue) {
+            requestAnimationFrame(update);
+        }
+    }
+
+    update();
+}
+
+
 // Handle guess
 function handleGuess(guess) {
     const isCorrect =
@@ -87,27 +124,62 @@ function handleGuess(guess) {
         (guess === "lower" && rightartistContainer.value < leftartistContainer.value);
 
     if (isCorrect) {
-        alert("Correct! Your score is: " + ++score);
-    
-        // Show the result gif
+        score++;
+        if (score > highScore) {
+            highScore = score;
+        }
+
+
+    // Show streams with animation
+        animateCount(leftArtistStreams, leftartistContainer.value);
+        animateCount(rightArtistStreams, rightartistContainer.value);
+
+
+        // Show the green checkmark
+        resultGif.src = "Monthly Listeners/Gif File/Check Mark Gif.gif";
         resultGif.hidden = false;
 
-        // Hide the gif after 2 seconds
+        // Hide the gif after 3 seconds
         setTimeout(() => {
             resultGif.hidden = true;
-        }, 2000);
-
+        }, 3000);
     } else {
-        alert(
-            `Wrong! Left artist had ${leftartistContainer.value} views, right artist had ${rightartistContainer.value} views.`
-        );
-        score = 0; // Reset score
+
+
+        // Show streams with animation
+        animateCount(leftArtistStreams, leftartistContainer.value);
+        animateCount(rightArtistStreams, rightartistContainer.value);
+
+        // Reset score
+        score = 0;
+
+        // Show the red X
+        resultGif.src = "Monthly Listeners/Gif File/Red X.gif";
+        resultGif.hidden = false;
+    
     }
 
-    // Reload game board after 2 seconds
-    setTimeout(updateGameBoard, 2000);
+    updateScoreDisplay();
+    setTimeout(updateGameBoard, 4000);
 }
 
-// Initialize the game
-updateGameBoard();
+// Update the game board to hide streams initially
+function updateGameBoard() {
+    resultGif.hidden = true;
 
+    const leftartist = getRandomArtist();
+    const rightartist = getRandomArtist(leftartist);
+
+    leftartistImage.src = imageDirectory + leftartist.image;
+    leftartistName.textContent = leftartist.artist;
+    leftartistContainer = leftartist;
+    leftArtistStreams.textContent = ""; // Clear streams text
+
+    rightartistImage.src = imageDirectory + rightartist.image;
+    rightartistName.textContent = rightartist.artist;
+    rightartistContainer = rightartist;
+    rightArtistStreams.textContent = ""; // Clear streams text
+}
+
+updateGameBoard();
+updateScoreDisplay();

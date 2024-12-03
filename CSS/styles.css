@@ -15,12 +15,12 @@ p.page-one {
     word-wrap: break-word;
     overflow-wrap: break-word;
     width: 70%; 
-    margin: 0 auto 4rem; 
+    margin: 0 auto 7rem; 
     text-align: center; 
 }
 
 .container {
-    margin: 0 auto; 
+    margin: 20px auto; 
     padding: 0; 
     border: 1rem;
     border-color: aqua;
@@ -55,7 +55,7 @@ img.large {
     background-color: green; 
     color: #ffffff; 
     font-size: 5rem; 
-    padding: 10px 20px; 
+    padding: 18px 20px; 
     border: 2px solid darkgreen; 
     border-radius: 20px; 
     cursor: pointer; 
