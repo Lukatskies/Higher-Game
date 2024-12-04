@@ -54,7 +54,7 @@ html, body {
 
 #left-artist, #right-artist {
     text-align: center;
-    margin: 20px;
+    margin: 20px, auto 20px;
 }
 
 
@@ -88,6 +88,7 @@ html, body {
     margin: 10px;
     padding: 10px 60px 10px 20px;
     font-size: 16px;
+    border-radius: 30px;
     cursor: pointer;
     background-color: black;
     color: white;
