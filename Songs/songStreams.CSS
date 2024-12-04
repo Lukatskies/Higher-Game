@@ -4,10 +4,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Jost", sans-serif;
-    background-color: #010e1e;
     color: white;
 }
-
 
 
 html, body {
@@ -16,7 +14,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aliceblue; 
+    background-color: #010e1e; 
 }
 
 /* Game container */
@@ -128,16 +126,16 @@ html, body {
 
 header {
 
-    padding: 0px 0; 
+    padding: 0px, 0; 
     margin: 0;
     text-align: center; 
     position: fixed; 
-    top: 0;
+    top: 10px;
 }
 
 
 header .logo {
-    width: 250px; 
+    width: 300px; 
     height: auto;
     cursor: pointer; 
     transition: transform 0.3s ease-in-out; 

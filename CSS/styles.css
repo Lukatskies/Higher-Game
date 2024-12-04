@@ -61,6 +61,7 @@ img.large {
     cursor: pointer; 
     display: block; 
     margin: 20px auto; 
+    margin-top: 60px;
     text-align: center; 
     text-transform: uppercase; 
     transition: background-color 0.3s, transform 0.2s; 
