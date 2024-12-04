@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Guessing Game</title>
+    <link rel="stylesheet" href="Albums/albumStyles.css">
+</head>
+<body>
+
+    <header>
+        <img src="CSS/Images/Logo.png" alt="Logo" class="logo" onclick="location.href='game modes.html'" />
+    </header>
+
+    <div id="game">
+        <div id="game-board">
+            <!-- Left artist/Album Container -->
+            <div id="left-artist-container">
+                <div id="left-artist">
+                    <p class="artist-streams" id="left-artist-streams"></p>
+                    <img id="left-artist-image" src="Albums/Album Images/" alt="Album 1 Image">
+                    <p class="album-name" id="left-album-name">Album 1</p>
+                    <p class="artist-name" id="left-artist-name">Artist 1</p>
+                </div>
+            </div>
+
+             <!-- Placeholder for the check mark .gif -->
+        <!-- Add this element in the HTML -->
+<div id="result-container">
+    <img id="result-gif" src="Albums/Gif File/Check Mark Gif.gif" hidden>
+</div>
+
+            <!-- Right artist/Album Container -->
+            <div id="right-artist-container">
+                <div id="right-artist">
+                    <p class="artist-streams" id="right-artist-streams"></p>
+                    <img id="right-artist-image" src="Albums/Album Images/" alt="Album 2 Image">
+                    <p class="album-name" id="right-album-name">Album 2</p>
+                    <p class="artist-name" id="right-artist-name">Artist 2</p>
+
+                    <button id="higher" class="guess-btn-up">Higher</button>
+                    <button id="lower" class="guess-btn-down">Lower</button> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="score-container">
+        <p id="high-score">High Score: 0</p>
+        <p id="current-score">Score: 0</p>
+    </div>
+
+    <script src="Albums/albumListeners.js"></script>
+</body>
+</html>

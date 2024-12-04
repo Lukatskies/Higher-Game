@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Guessing Game</title>
+    <link rel="stylesheet" href="Artists/Artist/artistStyles.css">
+</head>
+<body>
+
+    <header>
+        <img src="CSS/Images/Logo.png" alt="Logo" class="logo" onclick="location.href='game modes.html'" />
+    </header>
+
+    <div id="game">
+        <div id="game-board">
+            <!-- Left artist Container -->
+            <div id="left-artist-container">
+                <div id="left-artist">
+                    <!-- Small Animation for Streams -->
+                    <p class="artist-streams" id="left-artist-streams"></p>
+                    <img id="left-artist-image" src="Artists/Artist Images/" alt="Artist 1 Image">
+                    <p class="artist-name" id="left-artist-name">Artist 1</p>
+                </div>
+            </div>
+
+    <!-- Placeholder for the check mark gif -->
+        <div id="result-container">
+            <img id="result-gif" src="Artists/Gif File/Check Mark Gif.gif" hidden>
+        </div>
+
+
+
+            <!-- Right artist Container -->
+            <div id="right-artist-container">
+                <div id="right-artist">
+                    <p class="artist-streams" id="right-artist-streams"></p>
+                    <img id="right-artist-image" src="Artists/Artist Images/" alt="Artist 2 Image">
+                    <p class="artist-name" id="right-artist-name">Artist 2</p>
+                
+                    <button id="higher" class="guess-btn-up">Higher</button>
+                    <button id="lower" class="guess-btn-down">Lower</button> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="score-container">
+        <p id="high-score">High Score: 0</p>
+        <p id="current-score">Score: 0</p>
+    </div>
+
+    <script src="Artists/Artist/artistStreams.JS"></script>
+</body>
+</html>
