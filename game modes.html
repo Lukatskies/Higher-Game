@@ -3,21 +3,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="CSS/styles2.CSS">
+    <link rel="stylesheet" href="CSS/game modes.CSS">
     <title>Spotify Game</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
 </head>
 
 <body>
-    
     <img src="CSS/Images/Logo.png" alt="Logo" class="align-center clickable-logo" onclick="location.href='home page.html'" />
 
     <div class="game-modes">
-        <div class="mode-row" onclick="location.href='artists.html'">Artists</div>
-        <div class="mode-row" onclick="location.href='albums.html'">Albums</div>
-        <div class="mode-row" onclick="location.href='songs.html'">Songs</div>
+        <div id="row1" class="mode-row" onclick="location.href='artists.html'">
+            <p class="mode-name">Artists</p>
+        </div>
+
+        <div id="row2" class="mode-row" onclick="location.href='albums.html'">
+            <p class="mode-name">Albums</p>
+        </div>
+
+        <div id="row3" class="mode-row" onclick="location.href='songs.html'">
+            <p class="mode-name">Songs</p>
+        </div>
+
     </div>
-
-
-<script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 </HTML>

@@ -1,5 +1,6 @@
 body {
-    background-color: aliceblue;
+    background-color: #010e1e;
+    font-family: "Jost", sans-serif;
 }
 
 p.page-one {
@@ -64,6 +65,7 @@ img.large {
     justify-content: center;
     gap: 20px; 
     margin-top: 20px; 
+    text-align: center;
 }
 
 .mode-row {
@@ -71,17 +73,50 @@ img.large {
     padding: 20px; 
     border: 2px solid #333; 
     border-radius: 20px; 
-    background-color: #ffffffaf; 
-    color: #2d2626; 
-    font-size: 2rem; 
+    color: #171918;
+    display: flex; 
+    font-size: 3rem; 
     justify-content: center;
+    align-items: center;
     text-align: center; 
-    transition: background-color 0.3s, transform 0.2s; 
-    height: 50px;
+    transition: transform 0.5s; 
+    height: 30rem;
 }
 
-.mode-row:hover {
-    background-color: #bada55; 
-    transform: scale(1.05); 
-    cursor: pointer; 
+.mode-name {
+    margin-top: 15rem;
+    color:#15d760;
+    background-color:#010e1e;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    transition: transform 0.5s; 
+
+}
+
+#row1 {
+    background-image: url('Images/TheWeekndBackground.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#row2 {
+    background-image: url('Images/Backround-Image.jpg');
+    background-size: 350%;
+    background-repeat: no-repeat;
+}
+
+
+#row3 {
+    background-image: url('Images/guitar.jpg');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+
+.mode-name:hover, .mode-row:hover {
+    transform: scale(.95); 
+    cursor: pointer;  
+    box-shadow: darkgreen;
 }

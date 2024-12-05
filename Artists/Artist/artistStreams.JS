@@ -25,32 +25,33 @@ let leftartistContainer, rightartistContainer;
 
 // Artists Object List
 const artists = [
-    { image: 'Taylor Swift.jpg', artist: 'Taylor Swift', value: 94558183304 },
-    { image: 'Drake.jpg', artist: 'Drake', value: 81354787430 },
-    { image: 'Bad Bunny.jpg', artist: 'Bad Bunny', value: 77438204571 },
-    { image: 'The Weeknd.jpg', artist: 'The Weeknd', value: 63850944174 },
-    { image: 'Ed Sheeran.jpg', artist: 'Ed Sheeran', value: 50654299016 },
-    { image: 'Ariana Grande.jpg', artist: 'Ariana Grande', value: 49232938801 },
-    { image: 'Eminem.jpg', artist: 'Eminem', value: 47026342313 },
-    { image: 'Justin Bieber.jpg', artist: 'Justin Bieber', value: 45542432177 },
-    { image: 'Post Malone.jpg', artist: 'Post Malone', value: 42818439804 },
-    { image: 'Kanye West.jpg', artist: 'Kanye West', value: 42801386602 },
-    { image: 'Billie Eilish.jpg', artist: 'Billie Eilish', value: 42057176248 },
-    { image: 'BTS.jpg', artist: 'BTS', value: 40647351280 },
-    { image: 'Coldplay.jpg', artist: 'Coldplay', value: 35451535823 },
-    { image: 'Travis Scott.jpg', artist: 'Travis Scott', value: 35405434107 },
-    { image: 'Rhianna.jpg', artist: 'Rihanna', value: 35347737480 },
-    { image: 'J Balvin.jpg', artist: 'J Balvin', value: 34299541981 },
-    { image: 'Dua Lipa.jpg', artist: 'Dua Lipa', value: 33763345276 },
-    { image: 'Imagine Dragons.jpg', artist: 'Imagine Dragons', value: 32861120742 },
-    { image: 'Juice WRLD.jpg', artist: 'Juice WRLD', value: 32545805647 },
-    { image: 'Bruno Mars.jpg', artist: 'Bruno Mars', value: 31277978576 },
-    { image: 'X.jpg', artist: 'XXXTENTACION', value: 30738659235 },
-    { image: 'David Guetta.jpg', artist: 'David Guetta', value: 30084737839 },
-    { image: 'Ozuna.jpg', artist: 'Ozuna', value: 29503679301 },
-    { image: 'Kendrick.jpg', artist: 'Kendrick Lamar', value: 29295617051 },
-    { image: 'Maroon 5.jpg', artist: 'Maroon 5', value: 28348550823 },
+    { image: 'Taylor Swift.jpg', artist: 'Taylor Swift', value: 105000000 },
+    { image: 'Drake.jpg', artist: 'Drake', value: 92500000 },
+    { image: 'Bad Bunny.jpg', artist: 'Bad Bunny', value: 86400000 },
+    { image: 'The Weeknd.jpg', artist: 'The Weeknd', value: 117000000 },
+    { image: 'Ed Sheeran.jpg', artist: 'Ed Sheeran', value: 85300000 },
+    { image: 'Ariana Grande.jpg', artist: 'Ariana Grande', value: 80600000 },
+    { image: 'Eminem.jpg', artist: 'Eminem', value: 84900000 },
+    { image: 'Justin Bieber.jpg', artist: 'Justin Bieber', value: 82000000 },
+    { image: 'Post Malone.jpg', artist: 'Post Malone', value: 88100000 },
+    { image: 'Kanye West.jpg', artist: 'Kanye West', value: 50000000 },
+    { image: 'Billie Eilish.jpg', artist: 'Billie Eilish', value: 98800000 },
+    { image: 'BTS.jpg', artist: 'BTS', value: 40000000 },
+    { image: 'Coldplay.jpg', artist: 'Coldplay', value: 79100000 },
+    { image: 'Travis Scott.jpg', artist: 'Travis Scott', value: 45000000 },
+    { image: 'Rhianna.jpg', artist: 'Rihanna', value: 84700000 },
+    { image: 'J Balvin.jpg', artist: 'J Balvin', value: 54000000 },
+    { image: 'Dua Lipa.jpg', artist: 'Dua Lipa', value: 78000000 },
+    { image: 'Imagine Dragons.jpg', artist: 'Imagine Dragons', value: 74000000 },
+    { image: 'Juice WRLD.jpg', artist: 'Juice WRLD', value: 32000000 },
+    { image: 'Bruno Mars.jpg', artist: 'Bruno Mars', value: 134000000 },
+    { image: 'X.jpg', artist: 'XXXTENTACION', value: 31000000 },
+    { image: 'David Guetta.jpg', artist: 'David Guetta', value: 76700000 },
+    { image: 'Ozuna.jpg', artist: 'Ozuna', value: 36000000 },
+    { image: 'Kendrick.jpg', artist: 'Kendrick Lamar', value: 56000000 },
+    { image: 'Maroon 5.jpg', artist: 'Maroon 5', value: 72000000 }
 ];
+
 
 // Define the base directory for images
 const imageDirectory = "Artists/Artist Images/";
@@ -101,7 +102,7 @@ const rightArtistStreams = document.getElementById("right-artist-streams");
 //function to animate the streams count//
 function animateCount(element, targetValue) {
     let currentValue = 0;
-    const duration = 2000; // Animation duration in ms
+    const duration = 1600; // Animation duration in ms
     const increment = Math.ceil(targetValue / (duration / 16)); // Increment per frame (assuming ~60fps)
 
     function update() {
