@@ -144,7 +144,7 @@ function handleGuess(guess) {
 
 
         // Show the green checkmark
-        resultGif.src = "Albums/Gif File/Check Mark Gif.gif";
+        resultGif.src = "Albums/Gif File/checkmarkfinalgif.gif";
         resultGif.hidden = false;
 
         // Hide the gif after 3 seconds
