@@ -139,7 +139,7 @@ function handleGuess(guess) {
 
 
         // Show the green checkmark
-        resultGif.src = "Artists/Gif File/checkmarkfinalgif.gif";
+        resultGif.src = "Albums/Gif File/checkmarkfinalgif.gif";
         resultGif.hidden = false;
 
         // Hide the gif after 3 seconds
