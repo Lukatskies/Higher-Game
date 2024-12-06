@@ -134,7 +134,7 @@ html, body {
     width: 10%; 
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-bottom: 3rem;
 }
 
 
@@ -156,7 +156,7 @@ header {
 
 
 header .logo {
-    width: 300px; 
+    width: 10rem; 
     height: auto;
     cursor: pointer; 
     transition: transform 0.3s ease-in-out; 

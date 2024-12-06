@@ -113,6 +113,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 8rem;
 }
 
 
@@ -134,7 +135,7 @@ header {
 
 
 header .logo {
-    width: 300px; 
+    width: 10rem; 
     height: auto;
     cursor: pointer; 
     transition: transform 0.3s ease-in-out; 
