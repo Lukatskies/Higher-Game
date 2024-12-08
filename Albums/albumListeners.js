@@ -32,6 +32,9 @@ window.addEventListener("load", function(){
         1000
     )
 });
+
+
+//close popup for "x"
 document.querySelector("#close").addEventListener("click", function(){
     document.querySelector(".popup").style.display = "none";
 });
