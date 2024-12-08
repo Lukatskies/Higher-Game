@@ -122,6 +122,11 @@ function animateCount(element, targetValue) {
 
 // Handle guess
 function handleGuess(guess) {
+
+    higherButton.style.visibility = "hidden";
+    lowerButton.style.visibility = "hidden";
+
+
     const isCorrect =
         (guess === "higher" && rightartistContainer.value > leftartistContainer.value) ||
         (guess === "lower" && rightartistContainer.value < leftartistContainer.value);
@@ -163,7 +168,16 @@ function handleGuess(guess) {
     }
 
     updateScoreDisplay();
-    setTimeout(updateGameBoard, 4000);
+
+        // Wait before updating the game board
+        setTimeout(() => {
+            updateGameBoard();
+    
+            // Re-enable the buttons after the board updates
+            higherButton.style.visibility = "visible";
+            lowerButton.style.visibility = "visible";
+        }, 4000);
+
 }
 
 // Update the game board to hide streams initially
