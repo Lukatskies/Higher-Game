@@ -41,7 +41,7 @@ document.querySelector("#close").addEventListener("click", function(){
 
 // close popup when "Start Game!" link is clicked
 document.querySelector("#startGame").addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent default anchor behavior
+    event.preventDefault(); 
     document.querySelector(".popup").style.display = "none";
 });
 
