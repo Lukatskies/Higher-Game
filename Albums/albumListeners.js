@@ -44,7 +44,6 @@ document.querySelector("#startGame").addEventListener("click", function(event) {
 
 let leftartistContainer, rightartistContainer;
 
-
 // Artists Object List
 const albums = [
     { image: 'AfterHours.jpg', name: 'After Hours', artist: 'The Weeknd', value: 13800000000 },
