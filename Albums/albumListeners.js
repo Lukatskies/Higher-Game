@@ -185,7 +185,7 @@ function handleGuess(guess) {
     }
 
     updateScoreDisplay();
-    
+
     // Wait before updating the game board
         setTimeout(() => {
             updateGameBoard();

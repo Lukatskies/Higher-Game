@@ -180,6 +180,7 @@ function handleGuess(guess) {
 
 }
 
+
 // Update the game board to hide streams initially
 function updateGameBoard() {
     resultGif.hidden = true;

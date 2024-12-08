@@ -132,7 +132,7 @@ function handleGuess(guess) {
 
     higherButton.style.visibility = "hidden";
     lowerButton.style.visibility = "hidden";
-    
+
     const isCorrect =
         (guess === "higher" && rightartistContainer.value > leftartistContainer.value) ||
         (guess === "lower" && rightartistContainer.value < leftartistContainer.value);
