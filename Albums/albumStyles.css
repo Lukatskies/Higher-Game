@@ -179,7 +179,7 @@ header .logo:hover {
 }
 
 
-.popup{
+.popup {
     background-color: #333;
     width: 450px;
     padding: 30px 40px;
@@ -192,7 +192,8 @@ header .logo:hover {
     display: none;
     text-align: center;
 }
-.popup button{
+
+.popup button {
     display: block;
     margin:  0 0 20px auto;
     background-color: transparent;
@@ -202,13 +203,15 @@ header .logo:hover {
     outline: none;
     cursor: pointer;
 }
-.popup p{
+
+.popup p {
     font-size: large;
     text-align: justify;
     margin: 20px 0;
     line-height: 25px;
 }
-a{
+
+a {
     display: block;
     width: 150px;
     position: relative;

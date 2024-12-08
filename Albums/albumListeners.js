@@ -36,7 +36,14 @@ document.querySelector("#close").addEventListener("click", function(){
     document.querySelector(".popup").style.display = "none";
 });
 
+// close popup when "Start Game!" link is clicked
+document.querySelector("#startGame").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent default anchor behavior
+    document.querySelector(".popup").style.display = "none";
+});
+
 let leftartistContainer, rightartistContainer;
+
 
 // Artists Object List
 const albums = [

@@ -1,6 +1,6 @@
 console.log('hello')
 
-// Variables
+// variables
 const leftSongImage = document.getElementById("left-artist-image");
 const leftSongName = document.getElementById("left-song-name");
 const leftArtistName = document.getElementById("left-artist-name");
@@ -15,19 +15,37 @@ const lowerButton = document.getElementById("lower");
 let score = 0;
 let highScore = 0;
 
-// DOM elements for score display
+//DOM elements for score display
 const highScoreElement = document.getElementById("high-score");
 const currentScoreElement = document.getElementById("current-score");
 
-// Function to update score display
+//function for updating score display
 function updateScoreDisplay() {
     currentScoreElement.textContent = `Score: ${score}`;
     highScoreElement.textContent = `High Score: ${highScore}`;
 }
+// popup
+window.addEventListener("load", function(){
+    setTimeout(
+        function open(event){
+            document.querySelector(".popup").style.display = "block";
+        },
+        1000
+    )
+});
+document.querySelector("#close").addEventListener("click", function(){
+    document.querySelector(".popup").style.display = "none";
+});
+
+// close popup when "Start Game!" link is clicked
+document.querySelector("#startGame").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent default anchor behavior
+    document.querySelector(".popup").style.display = "none";
+});
 
 let leftartistContainer, rightartistContainer;
 
-// Songs Object List
+// songs object list
 const songs = [
     { image: 'The Weeknd.jpg', name: 'Blinding Lights', artist: 'The Weeknd', value: 3900000000 },
    { image: 'Ed Sheeran.jpg', name: 'Shape of You', artist: 'Ed Sheeran', value: 4121376734  },
@@ -95,7 +113,7 @@ function updateGameBoard() {
     rightartistContainer = rightartist;
 }
 
-// Event listeners for buttons
+//Event listeners for buttons
 higherButton.addEventListener("click", () => handleGuess("higher"));
 lowerButton.addEventListener("click", () => handleGuess("lower"));
 
@@ -107,15 +125,15 @@ const rightArtistStreams = document.getElementById("right-artist-streams");
 //function to animate the streams count//
 function animateCount(element, targetValue) {
     let currentValue = 0;
-    const duration = 2000; // Animation duration in ms
-    const increment = Math.ceil(targetValue / (duration / 16)); // Increment per frame (assuming ~60fps)
+    const duration = 2000; 
+    const increment = Math.ceil(targetValue / (duration / 16)); 
 
     function update() {
         currentValue += increment;
         if (currentValue >= targetValue) {
             currentValue = targetValue;
         }
-        element.textContent = currentValue.toLocaleString(); // Format with commas
+        element.textContent = currentValue.toLocaleString(); 
         if (currentValue < targetValue) {
             requestAnimationFrame(update);
         }
@@ -197,13 +215,13 @@ function updateGameBoard() {
     leftArtistName.textContent = leftartist.artist;
     leftSongName.textContent = leftartist.name;
     leftartistContainer = leftartist;
-    leftArtistStreams.textContent = ""; // Clear streams text
+    leftArtistStreams.textContent = ""; 
 
     rightSongImage.src = imageDirectory + rightartist.image;
     rightArtistName.textContent = rightartist.artist;
     rightSongName.textContent = rightartist.name;
     rightartistContainer = rightartist;
-    rightArtistStreams.textContent = ""; // Clear streams text
+    rightArtistStreams.textContent = ""; 
 }
 
 updateGameBoard();
