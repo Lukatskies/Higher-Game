@@ -190,9 +190,9 @@ header .logo:hover {
     left: 50%;
     top: 50%;
     border-radius: 8px;
-    font-family: "Poppins",sans-serif;
     display: none;
     text-align: center;
+
 }
 
 .popup button{
